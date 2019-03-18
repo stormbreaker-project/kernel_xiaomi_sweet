@@ -2478,7 +2478,7 @@ void update_cluster_topology(void)
 
 	INIT_LIST_HEAD(&new_head);
 
-	for_each_cpu(i, &cpus) {
+        for_each_cpu(i, &cpus) {
 		cluster_cpus = topology_possible_sibling_cpumask(i);
 		if (cpumask_empty(cluster_cpus)) {
 			WARN(1, "WALT: Invalid cpu topology!!");
