@@ -2104,11 +2104,6 @@ static inline int gsi_chk_intset_value(void)
 {
 	return -GSI_STATUS_UNSUPPORTED_OP;
 }
-static inline int gsi_enable_flow_control_ee(unsigned int chan_idx,
-			unsigned int ee, int *code)
-{
-	return -GSI_STATUS_UNSUPPORTED_OP;
-}
 
 static inline int gsi_enable_flow_control_ee(unsigned int chan_idx,
 			unsigned int ee, int *code)
