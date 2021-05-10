@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Cloning dependencies"
-git clone --depth=1 https://github.com/stormbreaker-project/kernel_xiaomi_sweet -b V1 kernel
+git clone --depth=1 https://github.com/stormbreaker-project/kernel_xiaomi_sweet -b test kernel
 cd kernel
 git clone --depth=1 -b master https://github.com/MASTERGUY/proton-clang clang
 git clone --depth=1 https://github.com/stormbreaker-project/AnyKernel3 -b sweet AnyKernel
