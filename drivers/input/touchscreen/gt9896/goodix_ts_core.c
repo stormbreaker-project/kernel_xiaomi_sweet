@@ -1249,7 +1249,6 @@ static irqreturn_t goodix_ts_threadirq_func(int irq, void *data)
 		}
 	}
 #endif
-	touch_irq_boost();
 
 	/* inform external module */
 	mutex_lock(&goodix_modules.mutex);
