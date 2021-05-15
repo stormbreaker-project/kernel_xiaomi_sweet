@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Cloning dependencies"
-git clone --depth=1 https://github.com/stormbreaker-project/kernel_xiaomi_sweet -b test kernel
+git clone --depth=1 https://github.com/stormbreaker-project/kernel_xiaomi_sweet -b V2 kernel
 cd kernel
 git clone --depth=1 -b master https://github.com/MASTERGUY/proton-clang clang
 git clone --depth=1 https://github.com/stormbreaker-project/AnyKernel3 -b sweet AnyKernel
@@ -18,7 +18,7 @@ function sendinfo() {
         -d chat_id="$CHATID" \
         -d "disable_web_page_preview=true" \
         -d "parse_mode=html" \
-        -d text="<b>• Sweet-Stormbreaker Kernel •</b>%0ABuild started on <code>Circle CI</code>%0AFor device <b>Redmi Note 10 Pro/Max</b> (sweet/sweetin)%0Abranch <code>$(git rev-parse --abbrev-ref HEAD)</code>(master)%0AUnder commit <code>$(git log --pretty=format:'"%h : %s"' -1)</code>%0AUsing compiler: <code>Proton clang 13</code>%0AStarted on <code>$(date)</code>%0A<b>Build Status:</b> #AOSP-Alpha"
+        -d text="<b>• Sweet-Stormbreaker Kernel •</b>%0ABuild started on <code>Circle CI</code>%0AFor device <b>Redmi Note 10 Pro/Max</b> (sweet/sweetin)%0Abranch <code>$(git rev-parse --abbrev-ref HEAD)</code>(master)%0AUnder commit <code>$(git log --pretty=format:'"%h : %s"' -1)</code>%0AUsing compiler: <code>Proton clang 13</code>%0AStarted on <code>$(date)</code>%0A<b>Build Status:</b>"
 }
 # Push kernel to channel
 function push() {
@@ -55,7 +55,7 @@ function compile() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 Sweet-StormBreaker-${TANGGAL}.zip *
+    zip -r9 Sweet-StormBreaker-V2-${TANGGAL}.zip *
     cd ..
 }
 sendinfo
